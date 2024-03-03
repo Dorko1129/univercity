@@ -15,7 +15,7 @@ do
     {
         k+=1;
     }
-} while (szam>0);
+} while (szam!=0);
 
     printf("pozitiv szamok darabja: %d\n", k);
 
