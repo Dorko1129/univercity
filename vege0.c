@@ -12,7 +12,7 @@ do
     printf("bekert szam: %d\n",szam);
     
     k+=szam;
-} while (szam>0);
+} while (szam!=0);
 if (k>0)
 {
     printf("az osszeg: %d\n", k);
