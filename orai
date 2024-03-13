@@ -1,0 +1,114 @@
+#include <stdio.h>
+
+void tomb_kiir(int tomb[], int meret)
+{
+    for (int i = 0; i < meret; i++)
+    {
+         if (i == meret-1)
+            {
+                printf("%d\n", tomb[i]);
+            }
+        else
+            {
+                printf("%d ", tomb[i]);
+            }
+        
+     }
+    
+    {
+}
+
+}
+int tomb_osszeg(int tomb[], int meret)
+{
+int szumma=0;
+for (int i = 0; i < meret; i++)
+{
+    szumma+=tombi[i];
+}
+return szumma;
+}
+
+int tomb_szorzat(int tomb[], int meret)
+{
+
+    int szorzat=1;
+    for (int i = 0; i < meret; i++)
+    {
+        szorzat*=tomb[i];
+    }
+    return szorzat;
+
+}
+
+int tomb_legnagyobb(int tomb[], int meret);
+{
+int max=tomb[0];
+for (int i = 1; i < meret; i++)
+{
+    if (tomb[i]>max)
+    {
+        max=tomb[i];
+    }
+}
+}
+
+int tomb_legkissebb(int tomb[], int meret);
+{
+int min=tomb[0];
+for (int i = 1; i < meret; i++)
+{
+    if (tomb[i]<min)
+    {
+        min=tomb[i];
+    }
+}
+}
+
+int tomb_contains(int tomb[], int meret, int keresett_elem)
+{
+for (int i = 0; i < meret; i++)
+{
+    if (tomb[i]==keresett_elem)
+    {
+        return 1;
+        break;
+    }
+    else
+    {
+        return 0;
+    }
+}
+}
+
+int tomb_keres(int tomb[], int meret, int keresett_elem)
+{
+int index=-1;
+for (int i = 0; i < meret; i++)
+{
+    if (tomb[i]==keresett_elem)
+    {
+        index=i;
+        break;
+    }
+    
+}
+
+}
+
+
+
+int main()
+{
+    int tomb[4] = {1,2,3,4};
+    int meret=4;
+    tomb_kiir(tomb, meret);
+
+    int osszeg= tomb_osszeg(tomb, meret);
+    printf(" az elemek osszege: %d\n", osszeg);
+
+    int szorzat=tomb_szorzat(tomb, meret);
+    printf("az elemek szorzata: %d\n", szorzat)
+
+    return 0;
+}
