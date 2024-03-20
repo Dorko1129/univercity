@@ -3,7 +3,7 @@
 int main()
 {
     
-    int tomb[10]={5, 10, 3, 4, 2, 6, 7, 21, 9, 10};
+    int tomb[10]={6, 8, 3, 7, 1, 9, 5, 25, 4, 11};
     int meret= 10;
     int osszeg=0;
     int tarolt = tomb[0];
