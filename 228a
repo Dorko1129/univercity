@@ -26,13 +26,13 @@ int main()
     int boldal=0;
     while (boldal<=0)
     {
-        printf("Az (AB oldal hossza: ");
+        printf("A (B) oldal hossza: ");
         scanf("%d",&boldal);
     }
     int coldal=0;
     while (coldal<=0)
     {
-        printf("Az (C) oldal hossza: ");
+        printf("A (C) oldal hossza: ");
         scanf("%d",&coldal);
     
  
