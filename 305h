@@ -17,7 +17,7 @@ void csere (int meret, int tomb[])
 int main()
 {
     
-    int tomb[10]={5, 10, 3, 4, 2, 6, -7, 21, 9, -10};
+    int tomb[10]={1, 10, 9, -5, -2, 3, -11, 33, 14, -20};
     int meret= 10;
     csere(meret, tomb);
     for (int i = 0; i < meret; i++)
