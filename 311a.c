@@ -2,20 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-/*
 
-Bemenet: sztringeket tartalmazó tömb. Számoljuk meg, hogy a bemenetben
-hány olyan sztring van, melynek a hossza legalább 2 s az
-első karaktere egyezik az utolsó karakterével. A visszatérési
-érték ezen feltételeket kielégítő sztringek száma legyen.
-
-Példák (Python kóddal, majd át kell írni C-be):
-
-match_ends(["aba", "xyz", "aa", "x", "bbb"])    ->  3
-match_ends(["", "x", "xy", "xyx", "xx"])        ->  2
-match_ends(["aaa", "be", "abc", "hello"])       ->  1
-
-*/
 
 int match_ends(int n, string words[])
 {
