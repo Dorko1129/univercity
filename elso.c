@@ -1,47 +1,54 @@
 #include <stdio.h>
 
-#define SIZE 150
+void kiir(int sor, int oszlop, int matrix[sor][oszlop])
+{
+    for (int i = 0; i < sor; i++)
+    {
+        for (int j = 0; j < oszlop; j++)
+        {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }  
+}
+
+void kiir_foatlo(int sor, int oszlop, int matrix[sor][oszlop])
+{
+    for (int i = 0; i < sor; i++)
+    {
+        printf("%d ",matrix[i][i]);
+    }  
+}
+
+
+int get_elemek_osszege(int sor, int oszlop, int matrix[sor][oszlop])
+{
+    int sum=0;
+    for (int i = 0; i < sor; i++)
+    {
+        for (int j = 0; j < oszlop; j++)
+        {
+            sum+=matrix[i][j];
+        }
+        
+    }  
+return sum;
+}
 
 int main()
 {
-    
-    int szam;
-    int szamok[SIZE] = {0};
-    int szamlalo=0;
-    puts("adj meg 0 vegjeleig egesz szamokat az [1. 99] intervallumbol! ");
-do
-{
-    printf("szam: ");
-    scanf("%d", &szam);
-    if (szam<1 || szam>99)
-    {
-        printf("ez a szam kivul esik az elfogadhato intervallumbol!");
-    }
-    else
-    {
-        
-        if (szam!=szamok[szam])
-        {
-            szamok[szam]=szam;
-            szamlalo++;
-        }
-        
-        
-    }
+    int matrix[4][4]={
+        {7,6,4,2},
+        {6,5,3,2},
+        {8,7,6,5},
+        {7,6,5,6}
+    };
+    int sor = 4;
+    int oszlop = 4;
 
-} while (szam !=0);
-
-printf("%d db kulombozo szam lett megadva. ", szamlalo);
-
-for (int i = 0; i < SIZE; i++)
-{
-    if (szamok[i] != 0)
-    {
-        printf("%d, ", szamok[i]);
-    }
-    
-    
-}
+    kiir(sor, oszlop, matrix);
+    printf("osszeg: %d\n", get_elemek_osszege(sor, oszlop, matrix));
+    kiir_foatlo(sor, oszlop, matrix);
 
 
     return 0;
