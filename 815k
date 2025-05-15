@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int cellak[601] = {0};
+    int i, j;
+
+    for (i = 1; i <= 600; i++) {
+        for (j = i; j <= 600; j += i) {
+            cellak[j] = !cellak[j];
+        }
+    }
+
+    for (i = 1; i <= 600; i++) {
+        if (cellak[i]) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
