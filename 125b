@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX_LINES 100
+#define MAX_LINE_LEN 128
+
+void capitalize(char* name) {
+    if (name[0]) name[0] = toupper(name[0]);
+    for (int i = 1; name[i]; i++) {
+        name[i] = tolower(name[i]);
+    }
+}
+
+int is_pti(const char* major) {
+    return strcasecmp(major, "pti") == 0;
+}
+
+int compare_names(const void* a, const void* b) {
+    return strcmp(*(const char**)a, *(const char**)b);
+}
+
+int main() {
+    FILE* file = fopen("nevek.csv", "r");
+    if (!file) return 1;
+
+    char line[MAX_LINE_LEN];
+    char* pti_names[MAX_LINES];
+    int pti_count = 0;
+
+    while (fgets(line, sizeof(line), file)) {
+        char* name = strtok(line, ",");
+        char* age = strtok(NULL, ",");
+        char* major = strtok(NULL, ",\n");
+
+        if (name && age && major && is_pti(major)) {
+            capitalize(name);
+            pti_names[pti_count++] = strdup(name);
+        }
+    }
+    fclose(file);
+
+    qsort(pti_names, pti_count, sizeof(char*), compare_names);
+
+    for (int i = 0; i < pti_count; i++) {
+        printf("%s", pti_names[i]);
+        if (i < pti_count - 1) printf(", ");
+    }
+    printf("\n");
+
+    for (int i = 0; i < pti_count; i++) {
+        free(pti_names[i]);
+    }
+
+    return 0;
+}
